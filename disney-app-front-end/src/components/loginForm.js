@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useForm} from "react-hook-form";
+import {Link} from "react-router-dom"
 import * as yup from "yup";
 import {DummyData} from "../dummyData"
 
@@ -60,6 +61,7 @@ const LoginForm = (props) => {
             </label>
             <button>Sign In</button>
         </form>
+        <Link to="/signup"><button>Signup</button></Link>
         </div>
     )
 };

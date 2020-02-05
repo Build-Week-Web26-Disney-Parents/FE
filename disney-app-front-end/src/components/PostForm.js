@@ -4,15 +4,15 @@ import * as yup from "yup"
 
 
 const postFormSchema = yup.object().shape({
-    addTitle:yup.string().required(),
-    addDesc:yup.string().required().max(256,"Your post cannot exceed 256 characters")
+    title:yup.string().required(),
+    content:yup.string().required().max(256,"Your post cannot exceed 256 characters")
 })
 
 
 const PostForm = (props) =>{
     const {userData,setShowPostForm, setPosts} = props
     const {register,handleSubmit,errors,reset} = useForm({
-        // validationSchema:postFormSchema
+        validationSchema:postFormSchema
     });
 
     // const charCount = 256-document.getElementById("addDesc").length();

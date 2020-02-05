@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {Route,Redirect,Link} from "react-router-dom"
+import {Route,Redirect} from "react-router-dom"
 import './App.css';
 
 import SignUp from "./components/SignUp";
 import Profile from "./components/Profile";
 import LoginForm from "./components/LoginForm";
+import Settings from "./components/Settings"
 
 
 function App() {
@@ -31,7 +32,9 @@ function App() {
       <Profile user={userData}/>
     </Route>
     <Route path="/signup/" component={SignUp}/>
-    <Link to="/signup"> <button>Sign Up</button></Link>
+    <Route path="/settings">
+      <Settings userData={userData}/>
+    </Route>
   
       
         

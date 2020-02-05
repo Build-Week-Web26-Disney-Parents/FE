@@ -1,21 +1,18 @@
 import React, {useState}from "react";
-import Header from "./Header"
-import {useRouteMatch} from "react-router-dom";
-import {useForm} from "react-hook-form"
+import {Link} from "react-router-dom";
+
 import PostForm from "./PostForm";
+
 
 
 export default function Profile({user}){
     const [posts,setPosts] = useState(user.posts);
 
-    console.log("in the profile")
-    let {path,url} = useRouteMatch();
     const [showPostForm,setShowPostForm] = useState(false)
-    const {register,handleSubmit,errors} = useForm();
     return(
         <div className="profile__info">
-            <Header/>
             <h1>Hello {user.name}</h1>
+            <Link to="/settings"><button className="settings__button">Settings</button></Link>
             <button onClick={()=> setShowPostForm(true)}>Add New Post</button>
             {showPostForm?<PostForm userData={user} setShowPostForm={setShowPostForm} setPosts={setPosts}/>:null}                    
                 
