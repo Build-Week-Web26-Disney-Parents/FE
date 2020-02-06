@@ -1,0 +1,89 @@
+.right__container{
+    background: url(../images/login.svg) no-repeat center center ; 
+    background-color:#453DB0;
+}
+
+.left__container{
+   display:grid;
+   grid-template-columns: 1fr 80% 1fr;
+   grid-template-rows: 15vh 15% 55%;
+   grid-template-areas:
+   "...logo..."
+   "...header..."
+   "...form..."
+   "... signup ...";
+}
+.logo{
+    background: url(../images/parent__logo.svg) no-repeat center center;
+    height:100%;
+    grid-area:logo;
+}
+h1{
+    color: #453db0;
+    font-size:2rem;
+    grid-area:header;
+    text-align: center;
+
+
+}
+.left__container form{
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows:repeat(3, 33%);
+    font-size:3vh;
+    grid-area:form;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+button{
+    background-color:#453db0;
+    border:none;
+    border-radius:2px;
+    color:white;
+    font-size:3vh;
+    height:35%;
+    width:55%;
+    margin:0 auto;
+    transition: all 500ms ease;
+}
+
+ button:hover{
+
+    background: #444072
+}
+label{
+    color: #453db0;
+    display:flex;
+    flex-direction:column;
+    font-weight:800;
+    width:75%;
+    margin:0 auto; 
+    
+
+}
+
+input{
+    border:solid 1px #453db0;
+    border-radius:2px;
+    display:block;
+    font-size:1.8rem;
+    height:5vh;
+    line-height: 3rem;
+}
+p{
+    color:crimson;
+    font-size:.8rem;
+    text-align:center;
+}
+input:focus{
+    box-shadow: 0 0 10px 0 #453db0;
+}
+.signup__button{
+    grid-area:signup;
+    height:7vh;
+}
+a{
+    color:white;
+    text-decoration: none;
+}

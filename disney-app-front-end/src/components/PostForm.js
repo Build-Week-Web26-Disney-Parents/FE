@@ -34,7 +34,6 @@ const PostForm = (props) =>{
                 type="text" 
                 ref={register} 
                 name="title"
-                // id="addTitle"
             />
             </label>
             {errors.title && <p>{errors}</p>}
@@ -44,7 +43,6 @@ const PostForm = (props) =>{
                 type="textarea" 
                 ref={register} 
                 name="content"
-                // id="addDesc"
                 />
             </label>
             {errors.content && <p>{errors.content.message}</p>}

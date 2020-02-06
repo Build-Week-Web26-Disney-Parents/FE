@@ -20,9 +20,9 @@ function App() {
     console.log(`userData: ${userData.email}, ${userData.password},${userData.posts}`)
   return (
     <>
-    {isAuth?
+    {/* {isAuth?
       <Redirect to="/profile"/>:
-      <Redirect to="/login"/>}
+      <Redirect to="/login"/>} */}
 
 
     <Route path="/login">

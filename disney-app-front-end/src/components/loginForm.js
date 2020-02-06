@@ -3,10 +3,19 @@ import {useForm} from "react-hook-form";
 import {Link} from "react-router-dom"
 import * as yup from "yup";
 import {DummyData} from "../dummyData"
+import styled from "styled-components";
+import "./loginForm.css"
 
 
 
 
+
+
+const StyledWrapper = styled.div`
+display:grid;
+grid-template-columns:2fr 3fr;
+height:100vh;
+`;
 
 
 
@@ -40,7 +49,9 @@ const LoginForm = (props) => {
     }
 
     return (
-        <div className="loginWrapper">
+        <StyledWrapper className="loginWrapper">
+            <div className="left__container">
+                <div className="logo"/>
         <h1>The Happiest Place on Earth for Everyone</h1>
         <form onSubmit = {handleSubmit(onSubmit)}>
             <label htmlFor="username">Username
@@ -51,7 +62,7 @@ const LoginForm = (props) => {
                     ref={register}/>
                 {errors.username && <p>{errors.username.message}</p>}
             </label>
-            <label htmlFor="password">password
+            <label htmlFor="password">Password
                 <input 
                     type="password" 
                     name="password" 
@@ -61,8 +72,10 @@ const LoginForm = (props) => {
             </label>
             <button>Sign In</button>
         </form>
-        <Link to="/signup"><button>Signup</button></Link>
+            <button className="signup__button"><Link to="/signup">Signup</Link></button>
         </div>
+        <div className="right__container"/>
+        </StyledWrapper>
     )
 };
 
