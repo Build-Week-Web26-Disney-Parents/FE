@@ -13,5 +13,10 @@ import { reducer } from './reducers';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
-ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>, document.getElementById('root'));
 // serviceWorker.unregister();

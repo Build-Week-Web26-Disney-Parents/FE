@@ -3,9 +3,10 @@ import {useForm} from "react-hook-form";
 import * as yup from "yup";
 import { connect } from 'react-redux';
 import { registerUser } from '../actions';
+import axios from 'axios';
 
 
-const function Signup = () => {
+const Signup = () => {
 
 
   const SignUpSchema = yup.object().shape({
@@ -125,11 +126,13 @@ const function Signup = () => {
         </div>
     )
 
-    const mapStateToProps = state => {
-        return {
-            state
-        }
-    };
+    
+};
+
+const mapStateToProps = state => {
+    return {
+        state
+    }
 };
 
 export default connect(mapStateToProps, {registerUser})(Signup);
